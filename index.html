@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Horas Extras e Plantão</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<body>
+    <div class="container">
+        <h1>Cálculo de Horas Extras e Plantão</h1>
+        <form id="calculoForm">
+            <label for="mês">Mês Vigente:</label>
+            <input type="month" name="mês" id="mês">
+            <label for="horasNormais">Horas Normais Trabalhadas:</label>
+            <input type="number" id="horasNormais" required>
+
+            <label for="horasExtras">Horas Extras:</label>
+            <input type="number" id="horasExtras" required>
+
+            <label for="valorHora">Valor da Hora (R$):</label>
+            <input type="number" id="valorHora" step="0.01" required>
+
+            <label for="Plantão">Plantão:</label>
+            <input type="checkbox" name="sim"  id="Plantão">
+            
+            <label for="DiaPlantão">Dia de Semana / Fim de Semana</label>
+            <select name="DiadeSemana" id="Dia de Semana">Dia de Semana>Fim de Semana
+                <option value="Dia de Semana">Dia de Semana</option>
+                <option value="Fim de Semana">Fim de Semana</option>
+            </select>
+
+            <label for="horasPlantao">Horas de Plantão:</label>
+            <input type="number" id="horasPlantao" required>
+
+            <button type="submit">Calcular</button>
+            <div class="downloadPdf">
+            <button type="button" id="downloadPdf">Download PDF</button>    
+            
+        </div>
+        </form>
+
+        <div id="resultado"></div>
+    </div>
+        
+    <script src="./script.js" ></script>
+
+</body>
+</html>
